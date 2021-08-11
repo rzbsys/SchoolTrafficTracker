@@ -1,9 +1,10 @@
-
+var STUDENT_CNT = 351;
 
 $('.box').bind({
     mouseenter: function (e) {
         $('.num').text($($($(this).children()[0]).children()[0]).text());
-        $('.sc').text($(this).data('cnt'));
+        $('#Traffic').text('이동 수 : ' + $(this).data('cnt'));
+        $('#Avg_Traffic').text('평균 이동 수 : ' + ($(this).data('cnt') / STUDENT_CNT).toFixed(3));
 
         $('.box').css('filter', 'opacity(0.6)');
         $('.box').css('transform', 'scale(0.9)');

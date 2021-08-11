@@ -1,15 +1,13 @@
 from flask import Flask, render_template, request
 from utils.algorithm import get_hist_with_list
 from utils.load_timetable import get_preprocess
-import os
 
-os.environ["FLASK_ENV"] = "development"
 
 #데이터 불러오기
 Location = get_preprocess()
 #경로 불러오기
 Path = get_hist_with_list(Location)
-print('return')
+print('return!')
 
 
 app = Flask(__name__)
@@ -22,7 +20,10 @@ def main():
 
 @app.route('/get_route', methods=['POST'])
 def get_route():
-    return {'result':Path}
+    return {'result': Path}
+
 
 if __name__ == '__main__':
     app.run('0.0.0.0', port=80, debug=False)
+
+

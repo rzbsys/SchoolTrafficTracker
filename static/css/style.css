@@ -114,6 +114,7 @@ select {
 }
 
 .score {
+    width: 200px;
     position: absolute;
     right: 30px;
     top: 10px;

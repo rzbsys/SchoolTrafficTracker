@@ -5,7 +5,7 @@ import os
 #경로 지정
 print('TT : Load Text')
 Path = os.getcwd()
-df = pd.read_csv(Path + '\\utils\\Timetable.csv')
+df = pd.read_csv(Path + '/utils/Timetable.csv')
 
 #교실 위치
 Loc_Clss = {
@@ -84,7 +84,9 @@ for i in Route_ARR:
     Arr_Slice += [i[18:25]]
     #금
     Arr_Slice += [i[25:33]]
-
+    if len(i) != 32:
+        print(len(i))
+        raise("TT : List Length Is Not 32")
     
 def get():
     return TimeArr

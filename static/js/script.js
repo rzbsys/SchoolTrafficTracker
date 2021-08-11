@@ -110,7 +110,7 @@ $.ajax({
                     $('#N' + i).css('background-color', 'rgb(240, 240, 240)');
                 } else {
                     $('#N' + i).css('background-color', 'rgba(255, 0, 0,' + $('#N' + i).data('cnt') / maxx + ')');
-                    if ($('#N' + i).data('cnt') / maxx > 0.5) {
+                    if ($('#N' + i).data('cnt') / maxx > 0.4) {
                         $('#N' + i).css('color', 'white');
                     }
                 }

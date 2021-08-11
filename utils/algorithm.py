@@ -13,7 +13,7 @@ Path = os.getcwd()
 
 #txt 불러오기
 print('Di : Load Text')
-f = open(Path + '\\utils\\graph.txt', 'r')
+f = open(Path + '/utils/graph.txt', 'r')
 data = f.read().split('\n')
 f.close()
 
