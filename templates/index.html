@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/first.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/second.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/third.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/fourth.css')}}">
+
+
+</head>
+<body>
+    <div id="Load">로딩중<br><span class="progress">0/0</span></h6></div>
+    <div id="Title">
+        <h1>최단 경로 찾기</h1> <h5>전민국</h5>
+        <select id="Sel_Floor">
+            <option value="First">1층</option>
+            <option value="Second">2층</option>
+            <option value="Third">3층</option>
+            <option value="Fourth">4층</option>
+        </select>
+    </div>
+    
+    <div id="Warn"><h1>현재 해상도에선 지도가 온전히 표시되지 않습니다.</h1></div>
+    <div class="score"><h1><b class="num">1</b><br><span class="sc">2039</span></h1></div>
+
+
+
+    <div id="First">
+        <div class="left">
+            <div data-cnt="0" class="box" id="N1"><h5><b>1</b><br>유도실</h5></div>
+            <div data-cnt="0" class="box" id="N2"><h5><b>2</b><br>계단</h5></div>
+            <div data-cnt="0" class="box" id="N3"><h5><b>3</b><br>미술실</h5></div>
+        </div>
+        <div class="center">
+            <div data-cnt="0" class="box" id="N14"><h5><b>14</b><br>계단</h5></div>
+            <div data-cnt="0" class="box"><h5><b>-1</b><br>매점</h5></div>
+            <div data-cnt="0" class="box"><h5><b>-1</b><br>휴게실</h5></div>
+            <div data-cnt="0" class="box"><h5><b>-1</b><br>휴게실</h5></div>
+            <div data-cnt="0" class="box"><h5><b>-1</b><br>휴게실</h5></div>
+            <div data-cnt="0" class="box"><h5><b>-1</b><br>휴게실</h5></div>
+
+        </div>
+
+        <div class="mid">
+            <div data-cnt="0" class="box" id="N4"><h5><b>4</b><br>계단</h5></div>
+            <div data-cnt="0" class="box" id="N5"><h5><b>5</b><br>1-2</h5></div>
+            <div data-cnt="0" class="box" id="N6"><h5><b>6</b><br>1-1</h5></div>
+            <div data-cnt="0" class="box" id="N7"><h5><b>7</b><br>계단</h5></div>
+            <div data-cnt="0" class="box" id="N8"><h5><b>8</b><br>홀</h5></div>
+            <div data-cnt="0" class="box" id="N9"><h5><b>9</b><br>계단</h5></div>
+            <div data-cnt="0" class="box" id="N10"><h5><b>10</b><br>3-3</h5></div>
+            <div data-cnt="0" class="box" id="N11"><h5><b>11</b><br>3-2</h5></div>
+            <div data-cnt="0" class="box" id="N12"><h5><b>12</b><br>3-1</h5></div>
+            <div data-cnt="0" class="box" id="N13"><h5><b>13</b><br>계단</h5></div>
+
+        </div>
+    </div>
+
+    <div id="Second">
+        <div class="left">
+            <div data-cnt="0" class="box" id="N15"><h5><b>15</b><br>물리실</h5></div>
+            <div data-cnt="0" class="box" id="N16"><h5><b>16</b><br>지학실</h5></div>
+            <div data-cnt="0" class="box" id="N17"><h5><b>17</b><br>계단</h5></div>
+            <div data-cnt="0" class="box" id="N18"><h5><b>18</b><br>화학실</h5></div>
+            <div data-cnt="0" class="box" id="N19"><h5><b>19</b><br>생명과학실</h5></div>
+
+        </div>
+        <div class="center">
+            <div data-cnt="0" class="box" id="N31"><h5><b>31</b><br>계단</h5></div>
+            <div data-cnt="0" class="box"><h5><b>-1</b><br>화장실</h5></div>
+            <div data-cnt="0" class="box"><h5><b>-1</b><br>도서열람실</h5></div>
+            <div data-cnt="0" class="box"><h5><b>-1</b><br>시청각실</h5></div>
+            <div data-cnt="0" class="box"><h5><b>-1</b><br>도서대출실</h5></div>
+            <div data-cnt="0" class="box"><h5><b>-1</b><br>-</h5></div>
+            <div data-cnt="0" class="box"><h5><b>-1</b><br>DCN</h5></div>
+            <div data-cnt="0" class="box"><h5><b>-1</b><br>역사관</h5></div>
+
+        </div>
+
+        <div class="mid">
+            <div data-cnt="0" class="box" id="N20"><h5><b>20</b><br>계단</h5></div>
+            <div data-cnt="0" class="box" id="N21"><h5><b>21</b><br>1-4</h5></div>
+            <div data-cnt="0" class="box" id="N22"><h5><b>22</b><br>1-3</h5></div>
+            <div data-cnt="0" class="box" id="N23"><h5><b>23</b><br>계단</h5></div>
+            <div data-cnt="0" class="box" id="N24"><h5><b>24</b><br>2-2</h5></div>
+            <div data-cnt="0" class="box" id="N25"><h5><b>25</b><br>2-1</h5></div>
+            <div data-cnt="0" class="box" id="N26"><h5><b>26</b><br>계단</h5></div>
+            <div data-cnt="0" class="box" id="N27"><h5><b>27</b><br>3-6</h5></div>
+            <div data-cnt="0" class="box" id="N28"><h5><b>28</b><br>3-5</h5></div>
+            <div data-cnt="0" class="box" id="N29"><h5><b>29</b><br>3-4</h5></div>
+            <div data-cnt="0" class="box" id="N30"><h5><b>30</b><br>계단</h5></div>
+
+        </div>
+    </div>
+
+    
+    
+    <div id="Third">
+        <div class="left">
+            <div data-cnt="0" class="box" id="N32"><h5><b>32</b><br>컴퓨터실</h5></div>
+            <div data-cnt="0" class="box" id="N33"><h5><b>33</b><br>계단</h5></div>
+            <div data-cnt="0" class="box" id="N34"><h5><b>34</b><br>영어전용실</h5></div>
+            <div data-cnt="0" class="box" id="N35"><h5><b>35</b><br>공용실4</h5></div>
+
+        </div>
+        <div class="center">
+            <div data-cnt="0" class="box" id="N51"><h5><b>51</b><br>계단</h5></div>
+            <div data-cnt="0" class="box"><h5><b>-1</b><br>화장실</h5></div>
+            <div data-cnt="0" class="box"><h5><b>-1</b><br>1학년<br>교무실</h5></div>
+            <div data-cnt="0" class="box" id="N50"><h5><b>50</b><br>대형<br>수업실</h5></div>
+            <div data-cnt="0" class="box"><h5><b>-1</b><br>2학년<br>교무실</h5></div>
+            <div data-cnt="0" class="box"><h5><b>-1</b><br>동아리실</h5></div>
+            <div data-cnt="0" class="box"><h5><b>-1</b><br>DCN</h5></div>
+            <div data-cnt="0" class="box"><h5><b>-1</b><br>역사관</h5></div>
+
+        </div>
+
+        <div class="mid">
+            <div data-cnt="0" class="box" id="N36"><h5><b>36</b><br>계단</h5></div>
+            <div data-cnt="0" class="box" id="N37"><h5><b>37</b><br>1-7</h5></div>
+            <div data-cnt="0" class="box" id="N38"><h5><b>38</b><br>1-6</h5></div>
+            <div data-cnt="0" class="box" id="N39"><h5><b>39</b><br>1-5</h5></div>
+            <div data-cnt="0" class="box" id="N40"><h5><b>40</b><br>계단</h5></div>
+            <div data-cnt="0" class="box" id="N41"><h5><b>41</b><br>열린도서관</h5></div>
+            <div data-cnt="0" class="box" id="N42"><h5><b>42</b><br>2-6</h5></div>
+            <div data-cnt="0" class="box" id="N43"><h5><b>43</b><br>2-5</h5></div>
+            <div data-cnt="0" class="box" id="N44"><h5><b>44</b><br>2-4</h5></div>
+            <div data-cnt="0" class="box" id="N45"><h5><b>45</b><br>계단</h5></div>
+            <div data-cnt="0" class="box" id="N46"><h5><b>46</b><br>2-3</h5></div>
+            <div data-cnt="0" class="box" id="N47"><h5><b>47</b><br>3-8</h5></div>
+            <div data-cnt="0" class="box" id="N48"><h5><b>48</b><br>3-7</h5></div>
+            <div data-cnt="0" class="box" id="N49"><h5><b>49</b><br>계단</h5></div>
+
+        </div>
+    </div>
+
+    <div id="Fourth">
+        <div class="left">
+            <div data-cnt="0" class="box" id="N52"><h5><b>52</b><br>계단</h5></div>
+            <div data-cnt="0" class="box" id="N53"><h5><b>53</b><br>공용실3<br>(수학)</h5></div>
+            <div data-cnt="0" class="box" id="N54"><h5><b>54</b><br>공용실2<br>(과학)</h5></div>
+            <div data-cnt="0" class="box" id="N55"><h5><b>55</b><br>공용실1<br>(한문)</h5></div>
+
+        </div>
+        <div class="center">
+            <div data-cnt="0" class="box" id="N79"><h5><b>79</b><br>계단</h5></div>
+            <div data-cnt="0" class="thr box"><h5><b>-1</b></h5></div>
+            <div data-cnt="0" class="box"><h5><b>-1</b><br>화장실</h5></div>
+
+            <div data-cnt="0" class="box" id="N75"><h5><b>75</b><br>자기주도<br>학습실3</h5></div>
+            <div data-cnt="0" class="thr box" id="N72"><h5><b>72</b></h5></div>
+            <div data-cnt="0" class="box" id="N50"><h5><b>50</b><br>대형<br>수업실</h5></div>
+
+            <div data-cnt="0" class="box"><h5><b>-1</b><br>2학년<br>교무실</h5></div>
+            <div data-cnt="0" class="thr box" id="N71"><h5><b>71</b></h5></div>
+            <div data-cnt="0" class="box"><h5><b>-1</b><br>동아리실</h5></div>
+
+            <div data-cnt="0" class="box"><h5><b>-1</b><br>DCN</h5></div>
+            <div data-cnt="0" class="thr box" id="N70"><h5><b>70</b></h5></div>
+            <div data-cnt="0" class="box"><h5><b>-1</b><br>역사관</h5></div>
+
+        </div>
+
+        <div class="mid">
+            <div data-cnt="0" class="box" id="N56"><h5><b>56</b><br>계단</h5></div>
+            <div data-cnt="0" class="box" id="N57"><h5><b>57</b><br>1-10</h5></div>
+            <div data-cnt="0" class="box" id="N58"><h5><b>58</b><br>1-9</h5></div>
+            <div data-cnt="0" class="box" id="N59"><h5><b>59</b><br>1-8</h5></div>
+            <div data-cnt="0" class="box" id="N60"><h5><b>60</b><br>계단</h5></div>
+            <div data-cnt="0" class="box" id="N61"><h5><b>61</b><br>당구장</h5></div>
+            <div data-cnt="0" class="box" id="N62"><h5><b>62</b><br>2-10</h5></div>
+            <div data-cnt="0" class="box" id="N63"><h5><b>63</b><br>2-9</h5></div>
+            <div data-cnt="0" class="box" id="N64"><h5><b>64</b><br>2-8</h5></div>
+            <div data-cnt="0" class="box" id="N65"><h5><b>65</b><br>계단</h5></div>
+            <div data-cnt="0" class="box" id="N66"><h5><b>66</b><br>2-7</h5></div>
+            <div data-cnt="0" class="box" id="N67"><h5><b>67</b><br>3-10</h5></div>
+            <div data-cnt="0" class="box" id="N68"><h5><b>68</b><br>3-9</h5></div>
+            <div data-cnt="0" class="box" id="N69"><h5><b>69</b><br>계단</h5></div>
+
+        </div>
+    </div>
+
+</body>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="{{url_for('static', filename='js/script.js')}}"></script>
+<script src="{{url_for('static', filename='js/animate.js')}}"></script>
+</html>

@@ -1,0 +1,28 @@
+#Second > .left {
+    display: grid;
+    grid-template-columns: repeat(5, 90px);
+    position: absolute;
+    left: -50px;
+    bottom: 180px;
+    transform: rotate(50deg);
+    grid-column-gap: 5px;
+}
+
+#Second > .center {
+    display: grid;
+    grid-template-columns: repeat(2, 90px);
+    position: absolute;
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    bottom: 85px;
+    right: 550px;
+}
+
+#Second > .mid {
+    display: grid;
+    grid-template-columns: repeat(11, 90px);
+    position: absolute;
+    right:0px;
+    bottom: 0px;
+    grid-column-gap: 5px;
+}

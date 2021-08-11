@@ -1,0 +1,34 @@
+#Fourth > .left {
+    display: grid;
+    grid-template-columns: repeat(4, 90px);
+    position: absolute;
+    left: -100px;
+    bottom: 140px;
+    transform: rotate(80deg);
+    grid-column-gap: 5px;
+}
+
+#Fourth > .center {
+    display: grid;
+    grid-template-columns: 90px 40px 90px;
+    position: absolute;
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    bottom: 85px;
+    right: 700px;
+}
+
+#Fourth > .mid {
+    display: grid;
+    grid-template-columns: repeat(14, 90px);
+    position: absolute;
+    right:0px;
+    bottom: 0px;
+    grid-column-gap: 5px;
+}
+
+
+
+.thr {
+    width: 40px !important;
+}

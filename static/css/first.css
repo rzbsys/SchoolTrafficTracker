@@ -1,0 +1,31 @@
+
+#First > .left {
+    display: grid;
+    grid-template-columns: repeat(3, 90px);
+    position: absolute;
+    left: 30px;
+    bottom: 230px;
+    transform: rotate(50deg);
+    grid-column-gap: 5px;
+}
+
+
+#First > .center {
+    display: grid;
+    grid-template-columns: repeat(2, 90px);
+    position: absolute;
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    bottom: 185px;
+    right: 550px;
+}
+
+
+#First > .mid {
+    display: grid;
+    grid-template-columns: repeat(10, 90px);
+    position: absolute;
+    right: 100px;
+    bottom: 100px;
+    grid-column-gap: 5px;
+}
