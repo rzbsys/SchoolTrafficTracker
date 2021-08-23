@@ -87,36 +87,34 @@ $('#Sel_Floor').on('change', () => {
 $.ajax({
     url: '/get_route',
     type: 'POST',
-    async: true,
-    dataType: "JSON",
+    dataType: "json",
     success: function (data) {
         graph = data['result'];
         console.log(graph);
         console.log(graph.length);
 
-        setTimeout(() => {
-            for (var i = 0; i < graph.length; i++) {
-                const buf = graph[i];
-                for (var t = 0; t < buf.length - 1; t++) {
-                    //Draw_Line_With_Node(buf[t], buf[t + 1]);
-                    $('#N' + buf[t]).data('cnt', $('#N' + buf[t]).data('cnt') + 1);
-                    maxx = ($('#N' + buf[t]).data('cnt') > maxx) ? $('#N' + buf[t]).data('cnt') : maxx;
-                    console.log(i + '/' + graph.length + '|' + t);
-                }
-                $('.progress').text(i + '/' + graph.length);
+        for (var i = 0; i < graph.length; i++) {
+            const buf = graph[i];
+            for (var t = 0; t < buf.length - 1; t++) {
+                //Draw_Line_With_Node(buf[t], buf[t + 1]);
+                $('#N' + buf[t]).data('cnt', $('#N' + buf[t]).data('cnt') + 1);
+                maxx = ($('#N' + buf[t]).data('cnt') > maxx) ? $('#N' + buf[t]).data('cnt') : maxx;
+                console.log(i + '/' + graph.length + '|' + t);
             }
-            for (var i = 1; i <= 79; i++) {
-                if ($('#N' + i).data('cnt') == 0) {
-                    $('#N' + i).css('background-color', 'rgb(240, 240, 240)');
-                } else {
-                    $('#N' + i).css('background-color', 'rgba(255, 0, 0,' + $('#N' + i).data('cnt') / maxx + ')');
-                    if ($('#N' + i).data('cnt') / maxx > 0.4) {
-                        $('#N' + i).css('color', 'white');
-                    }
+            $('.progress').text(i + '/' + graph.length);
+        }
+        for (var i = 1; i <= 79; i++) {
+            if ($('#N' + i).data('cnt') == 0) {
+                $('#N' + i).css('background-color', 'rgb(240, 240, 240)');
+            } else {
+                $('#N' + i).css('background-color', 'rgba(255, 0, 0,' + $('#N' + i).data('cnt') / maxx + ')');
+                if ($('#N' + i).data('cnt') / maxx > 0.4) {
+                    $('#N' + i).css('color', 'white');
                 }
             }
+        }
 
-            
+
         $('#Fourth').hide();
         $('#Second').hide();
         $('#Third').hide();
@@ -125,12 +123,6 @@ $.ajax({
         $('body').css('transform', 'scale(1)');
         $('#Load').css('transform', 'scale(1)');
         $('#Load').css('height', '0px');
-
-            
-        }, 0);
-
-
-
 
     }
 });

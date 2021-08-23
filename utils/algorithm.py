@@ -1,9 +1,3 @@
-###############################
-#       Dijkstra Distance     #
-#      Tracking Algorithm     #
-###############################
-
-
 import heapq
 import os
 
@@ -27,7 +21,6 @@ graph = [[] for _ in range(data_len + 10)]
 
 for i in data:
     g_from, g_to, g_cost = map(int, i.split(' '))
-
     #양방향 그래프
     graph[g_from] += [[g_to, g_cost]]
     graph[g_to] += [[g_from, g_cost]]
@@ -65,7 +58,6 @@ def get_hist(start_node, goal_node):
         search_now = hist[search_now]
     hist_arr += [search_now]
     hist_arr.reverse()
-
     return hist_arr
 
 #배열로 경로 불러오기
